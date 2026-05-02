@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Settlement</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div class="ambient ambient-a"></div>
+	<div class="ambient ambient-b"></div>
+
+	<div class="app-shell">
+		<main class="main-column">
+			<section class="panel board-panel">
+				<div class="board-frame">
+					<div class="board-stage">
+						<div class="board-meta">
+							<div id="boardCount" class="count-pill">0 / 25 dolu</div>
+							<div id="dayCount" class="count-pill">Gün: 1</div>
+							<div class="layout-tools">
+								<button id="toggleLayoutMode" class="layout-button" type="button">Layout Modu: Kapali</button>
+								<button id="exportLayout" class="layout-button" type="button">Koordinatlari Kopyala</button>
+							</div>
+						</div>
+						<div id="boardStats" class="board-stats" aria-live="polite"></div>
+						<div id="board" class="board-grid" aria-label="Yerlesim alani"></div>
+						<div id="palette" class="palette-list board-palette" aria-label="Bina paleti"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<div id="startOverlay" class="start-overlay" role="dialog" aria-modal="true" aria-labelledby="startTitle">
+		<div class="panel start-card">
+			<p class="eyebrow">Settlement</p>
+			<h2 id="startTitle">Hazir misin?</h2>
+			<p class="end-message">Sonsuz mod basliyor. Gun arttikca statlar daha hizli degisecek.</p>
+			<button id="startButton" class="restart-button" type="button">Oyuna Baslat</button>
+		</div>
+	</div>
+
+	<div id="endOverlay" class="end-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="endTitle">
+		<div class="panel end-card">
+			<p id="endKicker" class="eyebrow"></p>
+			<h2 id="endTitle"></h2>
+			<p id="endMessage" class="end-message"></p>
+			<img id="endImage" class="end-image hidden" alt="end image">
+			<div id="endDetails" class="end-details"></div>
+			<button id="restartButton" class="restart-button" type="button">Yeniden baslat</button>
+		</div>
+	</div>
+</body>
+</html>
