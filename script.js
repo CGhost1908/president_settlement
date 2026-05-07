@@ -3,56 +3,56 @@
 		id: 'house',
 		name: 'Ev',
 		image: 'src/house.png',
-		description: 'Nufusu canlandirir ve mahalle hissi verir.',
-		effects: { pollution: 1, crowd: 2, education: -1, crime: 1, economy: -2, health: -1, happiness: 0 },
-		addable: true,
+		description: 'Nüfusu canlandırır ve mahalle hissi verir.',
+		effects: { crowd: 2, education: -2, health: -2, happiness: -2, economy: -2},
+		addable: false,
 	},
 	park: {
 		id: 'park',
 		name: 'Park',
 		image: 'src/park.png',
-		description: 'Nefes aldirir, kalabaligi yumusatir.',
-		effects: { pollution: -6, crowd: -4, education: 0, crime: -2, economy: 0, health: 1, happiness: 2 },
+		description: 'Nefes aldırır, kalabalığı yumuşatır.',
+		effects: { crowd: -8, health: 1, happiness: 2},
 		addable: true,
 	},
 	school: {
 		id: 'school',
 		name: 'Okul',
 		image: 'src/school.png',
-		description: 'Egitimi yukari ceker, sucu azaltir.',
-		effects: { pollution: 0, crowd: 3, education: 11, crime: -4, economy: 0, health: 0, happiness: -2 },
+		description: 'Eğitimi yukarı çeker, suçu azaltır.',
+		effects: { crowd: 3, education: 11, happiness: -2},
 		addable: true,
 	},
 	policestation: {
 		id: 'policestation',
 		name: 'Polis',
 		image: 'src/policestation.png',
-		description: 'Sokak guvenligini saglar.',
-		effects: { pollution: 0, crowd: 0, education: 1, crime: -7 },
+		description: 'Sokak güvenliğini sağlar.',
+		effects: { education: 1, crime: -7, crowd: -2 },
 		addable: true,
 	},
 	hospital: {
 		id: 'hospital',
 		name: 'Hastane',
 		image: 'src/hospital.png',
-		description: 'Saglik hizmeti ile sehir nefes alir.',
-		effects: { pollution: 0, crowd: 2, education: 1, crime: -3, economy: 0, health: 4, happiness: 0 },
+		description: 'Sağlık hizmeti ile şehir nefes alır.',
+		effects: { health: 4},
 		addable: true,
 	},
 	firestation: {
 		id: 'firestation',
-		name: 'Itfaiye',
+		name: 'İtfaiye',
 		image: 'src/firestation.png',
-		description: 'Acil durumlara hizla yanit verir.',
-		effects: { pollution: -5, crowd: 0, education: 0, crime: -5, economy: 0, health: 0, happiness: 0 },
+		description: 'Acil durumlara hızla yanıt verir.',
+		effects: { pollution: -5, crime: -5},
 		addable: true,
 	},
 	trashstation: {
 		id: 'trashstation',
-		name: 'Atik',
+		name: 'Atık',
 		image: 'src/trashstation.png',
-		description: 'Kirliligi toplar, sehirin agirligini azaltir.',
-		effects: { pollution: -11, crowd: -1, education: 0, crime: 2 },
+		description: 'Kirliliği toplar, şehrin ağırlığını azaltır.',
+		effects: { pollution: -11, crowd: -1, crime: 2 },
 		addable: true,
 	},
 	shop: {
@@ -60,31 +60,31 @@
 		name: 'Market',
 		image: 'src/shop.png',
 		description: 'Ticaret ve hareket getirir.',
-		effects: { pollution: 1, crowd: 3, education: 0, crime: 2 },
+		effects: { happiness: 3, crowd: 3, crime: 2 },
 		addable: true,
 	},
 	airport: {
 		id: 'airport',
-		name: 'Havalimani',
+		name: 'Havalimanı',
 		image: 'src/airport.png',
-		description: 'Sehire ulasim ve hareketlilik katar.',
-		effects: { pollution: 5, crowd: 8, education: 1, crime: 1, economy: 7, health: 0, happiness: 3 },
+		description: 'Şehre ulaşım ve hareketlilik katar.',
+		effects: { pollution: 5, crowd: 8, education: 1, crime: 1, economy: 7, happiness: 3 },
 		addable: false,
 	},
 	factory: {
 		id: 'factory',
 		name: 'Fabrika',
 		image: 'src/factory.png',
-		description: 'Ekonomi getirir ama kirlilik de uretir.',
-		effects: { pollution: 12, crowd: 0, education: -2, crime: 4, economy: 10, health: -3, happiness: -4 },
+		description: 'Ekonomi getirir ama kirlilik de üretir.',
+		effects: { pollution: 12, economy: 10, health: -3},
 		addable: true,
 	},
 	santral: {
 		id: 'santral',
 		name: 'Santral',
 		image: 'src/santral.png',
-		description: 'Enerji saglar, yan etkileri vardir.',
-		effects: { pollution: 8, crowd: 0, education: 0, crime: 3 },
+		description: 'Enerji sağlar, yan etkileri vardır.',
+		effects: { pollution: 8, crime: 3, economy: 5},
 		addable: true,
 	},
 };
@@ -97,49 +97,54 @@ const statMeta = {
 		icon: 'IC1',
 		min: 0,
 		max: 99,
-		lowText: 'Sehirin nabzi dustu, yasam sönmeye basladi.',
-		highText: 'Sehir kul olup yandi.',
+		lowText: 'Şehrin nabzı düştü, yaşam sönmeye başladı.',
+		highText: 'Şehir kül olup yandı.',
 		color: '#f59e0b',
+		icon: 'fa-solid fa-smog'
 	},
 	crowd: {
-		label: 'Kalabalik',
+		label: 'Kalabalık',
 		short: 'Kal',
 		icon: 'IC2',
 		min: 30,
 		max: 99,
-		lowText: 'Sokaklar bosaldi, sehir kan kaybetti.',
-		highText: 'Sehir nefes alamadi, kalabalik baskin cikardi.',
+		lowText: 'Sokaklar boşaldı, şehir kan kaybetti.',
+		highText: 'Şehir nefes alamadı, kalabalık baskın çıktı.',
 		color: '#38bdf8',
+		icon: 'fa-solid fa-people-group'
 	},
 	education: {
-		label: 'Egitim',
+		label: 'Eğitim',
 		short: 'Egt',
 		icon: 'IC3',
 		min: 10,
 		max: 100,
-		lowText: 'Sehir gelecegini kaybetti.',
-		highText: 'Egitim dengesi fazla yukselip sehir hayatini kilitledi.',
+		lowText: 'Şehir geleceğini kaybetti.',
+		highText: 'Eğitim dengesi fazla yükselip şehir hayatını kilitledi.',
 		color: '#86efac',
+		icon: 'fa-solid fa-graduation-cap'
 	},
 	crime: {
-		label: 'Suc',
-		short: 'Suc',
+		label: 'Suç',
+		short: 'Suç',
 		icon: 'IC4',
 		min: 0,
 		max: 99,
-		lowText: 'Sehir dogal akisini kaybetti.',
-		highText: 'Sokaklar suca teslim oldu.',
+		lowText: 'Şehir doğal akışını kaybetti.',
+		highText: 'Sokaklar suça teslim oldu.',
 		color: '#fb7185',
+		icon: 'fa-solid fa-handcuffs'
 	},
 	health: {
-		label: 'Saglik',
+		label: 'Sağlık',
 		short: 'Sag',
 		icon: 'IC5',
 		min: 10,
 		max: 100,
-		lowText: 'Sehir saglik krizine girdi.',
-		highText: 'Saglik yuklenmesi diger sistemleri kitledi.',
+		lowText: 'Şehir sağlık krizine girdi.',
+		highText: 'Sağlık yüklenmesi diğer sistemleri kilitledi.',
 		color: '#34d399',
+		icon: 'fa-solid fa-heart-pulse'
 	},
 	economy: {
 		label: 'Ekonomi',
@@ -147,9 +152,10 @@ const statMeta = {
 		icon: 'IC6',
 		min: 10,
 		max: 100,
-		lowText: 'Ekonomi zayifladi, isler durdu.',
-		highText: 'Ekonomi asiri sisip sehir dengesini bozdu.',
+		lowText: 'Ekonomi zayıfladı, işler durdu.',
+		highText: 'Ekonomi aşırı şişip şehir dengesini bozdu.',
 		color: '#fbbf24',
+		icon: 'fa-solid fa-money-bill'
 	},
 	happiness: {
 		label: 'Mutluluk',
@@ -157,9 +163,10 @@ const statMeta = {
 		icon: 'IC7',
 		min: 20,
 		max: 100,
-		lowText: 'Sehirde moral coktu.',
-		highText: 'Yuksek beklenti dalgasi duzeni bozdu.',
+		lowText: 'Şehirde moral çöktü.',
+		highText: 'Yüksek beklenti dalgası düzeni bozdu.',
 		color: '#a78bfa',
+		icon: 'fa-solid fa-face-smile'
 	},
 };
 
@@ -328,14 +335,29 @@ function getBuildingList() {
 	return Object.values(catalog);
 }
 
+function getEffectBadges(effects) {
+	return Object.entries(effects)
+		.filter(([key, value]) => value !== 0)
+		.map(([key, value]) => {
+			const isPositive = value > 0;
+			const isNegative = value < 0;
+			const color = isPositive ? '#34d399' : '#fb7185';
+			const statIcon = statMeta[key].icon;
+			return `<span class="effect-badge" style="color: ${color};" title="${statMeta[key].label} ${isPositive ? '+' : ''}${value}"><i class="${statIcon}"></i></span>`;
+		})
+		.join('');
+}
+
 function buildPalette() {
 	palette.innerHTML = getBuildingList()
 		.filter((building) => building.addable)
 		.map((building) => {
+			const effectBadges = getEffectBadges(building.effects);
 			return `
 				<article class="building-card icon-only${state.selectedBuildingId === building.id ? ' selected' : ''}" draggable="true" tabindex="0" data-building-id="${building.id}" aria-label="${building.name}" title="${building.name}">
 					<img src="${building.image}" alt="${building.name}">
                     <span class="building-name">${building.name}</span>
+					<div class="effect-badges">${effectBadges}</div>
 				</article>
 			`;
 		})
@@ -377,7 +399,7 @@ function startDestruction(index) {
 		state.tiles[index] = null;
 		clearDestruction(index);
 		refresh();
-	}, 1000);
+	}, 2500);
 }
 
 function getFailure(stats) {
@@ -474,13 +496,13 @@ function renderBoard() {
 					? catalog[previewId].image
 					: '';
 			return `
-				<div class="board-tile ${building ? 'occupied' : 'empty'}${destroying ? ' destroying' : ''}${constructing ? ' constructing' : ''}${locked ? ' locked' : ''}" data-index="${index}" tabindex="0" role="button" aria-label="${building ? building.name : 'Bos schema'}" ${style}>
-					<img class="schema-icon" src="src/schema.png" alt="">
+					<div class="board-tile ${building ? 'occupied' : 'empty'}${destroying ? ' destroying' : ''}${constructing ? ' constructing' : ''}${locked ? ' locked' : ''}" data-index="${index}" tabindex="0" role="button" aria-label="${building ? building.name : 'Boş şema'}" ${style}>
+					<img class="schema-icon" src="src/schema.png" alt="" data-index="${index}">
 					${!building ? `<img class="preview-building" src="${previewImage}" alt="" aria-hidden="true">` : ''}
 					${constructing ? `<div class="construction-progress" aria-hidden="true"><i style="animation-delay:-${constructionElapsed}ms;"></i></div>` : ''}
 					${destroying ? `<div class="destruction-progress" aria-hidden="true"><i style="animation-delay:-${destructionElapsed}ms;"></i></div>` : ''}
 					${building ? `<img class="placed-building" draggable="${locked ? 'false' : 'true'}" data-building-id="${building.id}" data-source-index="${index}" src="${building.image}" alt="${building.name}">` : ''}
-					${building && !destroying && !locked ? `<button class="clear-button" type="button" data-action="clear" aria-label="${building.name} sil">x</button>` : ''}
+					${building && !destroying && !locked ? `<button class="clear-button" type="button" data-action="clear" aria-label="${building.name} kaldır"><i class="fa-solid fa-hammer"></i></button>` : ''}
 				</div>
 			`;
 		})
@@ -507,6 +529,71 @@ function renderBoard() {
 			}, 300);
 		});
 	});
+
+	const schemaIcons = board.querySelectorAll('.schema-icon');
+	schemaIcons.forEach((icon) => {
+		icon.addEventListener('dragover', (event) => {
+			if (state.gameEnded || state.layoutMode) {
+				return;
+			}
+
+			event.preventDefault();
+			event.stopPropagation();
+		});
+
+		icon.addEventListener('drop', (event) => {
+			if (state.gameEnded || state.layoutMode) {
+				return;
+			}
+
+			event.preventDefault();
+			event.stopPropagation();
+
+			const tile = icon.closest('.board-tile');
+			if (!tile) {
+				return;
+			}
+
+			const index = Number(tile.dataset.index);
+			if (Number.isNaN(index) || index < 0) {
+				return;
+			}
+
+			if (state.destroying[index] || isLockedTile(index) || constructionTimers[index]) {
+				setDragging(false);
+				return;
+			}
+
+			const payload = getDragPayload(event) || (state.draggingBuildingId
+				? { type: 'palette', buildingId: state.draggingBuildingId }
+				: null);
+			if (!payload) {
+				setDragging(false);
+				return;
+			}
+
+			if (payload.type === 'palette') {
+				replaceBuilding(index, payload.buildingId);
+				setDragging(false);
+				return;
+			}
+
+			if (payload.type === 'board') {
+				if (payload.sourceIndex === index) {
+					setDragging(false);
+					return;
+				}
+
+				if (isLockedTile(payload.sourceIndex) || state.destroying[payload.sourceIndex] || constructionTimers[payload.sourceIndex]) {
+					setDragging(false);
+					return;
+				}
+
+				startConstruction(index, payload.buildingId, payload.sourceIndex);
+				setDragging(false);
+			}
+		});
+	});
 }
 
 function findNearestSlotIndex(x, y) {
@@ -531,7 +618,7 @@ function updateSummary(stats) {
 	const occupiedCount = state.tiles.filter(Boolean).length;
 	boardCount.textContent = `${occupiedCount} / ${state.tiles.length} dolu`;
 
-	const activeSelection = state.selectedBuildingId ? `Secili bina: ${catalog[state.selectedBuildingId].name}. ` : '';
+	const activeSelection = state.selectedBuildingId ? `Seçili bina: ${catalog[state.selectedBuildingId].name}. ` : '';
 	const failure = getFailure(stats);
 
 	if (state.gameEnded) {
@@ -547,25 +634,25 @@ function updateSummary(stats) {
 
 	if (occupiedCount === state.tiles.length) {
 		if (summary) {
-			summary.textContent = `${activeSelection}Schema'lar dolu. Oyun sonsuz akista devam ediyor.`;
+			summary.textContent = `${activeSelection}Şemalar dolu. Oyun sonsuz akışta devam ediyor.`;
 		}
 		return;
 	}
 
 	if (summary) {
-		summary.textContent = `${activeSelection}Sonsuz mod aktif. Gun arttikca tick hizi 2x katlaniyor.`;
+		summary.textContent = `${activeSelection}Sonsuz mod aktif. Gün arttıkça tik hızı 2x katlanıyor.`;
 	}
 }
 
 function getEndMessage(mode, issue, stats) {
 	if (mode === 'win') {
-		return 'Tum schema alanlari dengeli sekilde dolduruldu. AI raporu: Bu sehir yasiyor, nefes aliyor ve ayakta kalmayi basardi.';
+		return 'Tüm şema alanları dengeli şekilde dolduruldu. Bu şehir yaşıyor, nefes alıyor ve ayakta kalmayı başardı.';
 	}
 
 	const statName = statMeta[issue.key].label;
 	const currentValue = stats[issue.key];
 	const limit = issue.direction === 'low' ? statMeta[issue.key].min : statMeta[issue.key].max;
-	return `AI raporu: ${getFailureMessage(issue)} ${statName} degeri ${currentValue} noktasinda kaldi, sinir ${limit} idi.`;
+	return `YZ raporu: ${getFailureMessage(issue)} ${statName} değeri ${currentValue} noktasında kaldı, sınır ${limit} idi.`;
 }
 
 function showEnd(mode, issue, stats) {
@@ -581,26 +668,26 @@ function showEnd(mode, issue, stats) {
 	}
 
 	if (mode === 'win') {
-		endKicker.textContent = 'Basari';
-		endTitle.textContent = 'Sehir Dengede';
+		endKicker.textContent = 'Başarı';
+		endTitle.textContent = 'Şehir Dengede';
 	} else {
 		endKicker.textContent = 'Oyun Bitti';
-		endTitle.textContent = 'AI Sonuclandi';
+		// endTitle.textContent = 'YZ Sonuçlandı';
 	}
 
 	endMessage.textContent = getEndMessage(mode, issue, stats);
-	endDetails.innerHTML = statOrder
+	endDetails.innerHTML = `<div class="end-line"><strong>Gün Sayısı</strong>: ${currentDay}</div>` + statOrder
 		.map((key) => `<div class="end-line"><strong>${statMeta[key].label}</strong>: ${stats[key]}</div>`)
 		.join('');
 
 	if (endImage) {
 		if (mode === 'lose') {
 			endImage.src = 'src/schema.png';
-			endImage.alt = 'AI failure image';
+			endImage.alt = 'YZ başarısızlık görseli';
 			endImage.classList.remove('hidden');
 		} else if (mode === 'win') {
 			endImage.src = 'src/plate.png';
-			endImage.alt = 'AI success image';
+			endImage.alt = 'YZ başarı görseli';
 			endImage.classList.remove('hidden');
 		}
 	}
@@ -608,7 +695,7 @@ function showEnd(mode, issue, stats) {
 
 function refresh() {
 	const stats = getStats();
-	buildPalette();
+	document.body.classList.toggle('palette-selected', Boolean(state.selectedBuildingId));
 	renderBoard();
 	renderStats(stats);
 	updateSummary(stats);
@@ -671,7 +758,7 @@ function advanceDay() {
 		bestDay = currentDay;
 		localStorage.setItem('bestDay', String(bestDay));
 	}
-	if (dayCountEl) dayCountEl.textContent = `Gun: ${currentDay}`;
+	if (dayCountEl) dayCountEl.textContent = `Gün: ${currentDay}`;
 }
 
 function setSelectedBuilding(buildingId) {
@@ -697,7 +784,7 @@ function startConstruction(index, buildingId, sourceIndex = null) {
 		}
 		clearConstruction(index);
 		refresh();
-	}, 1000);
+	}, 2500);
 }
 
 function placeBuilding(index, buildingId, sourceIndex = null) {
@@ -977,7 +1064,7 @@ if (restartButton) {
 		state.selectedBuildingId = null;
 		state.gameEnded = false;
 		currentDay = 1;
-		if (dayCountEl) dayCountEl.textContent = `Gun: ${currentDay}`;
+		if (dayCountEl) dayCountEl.textContent = `Gün: ${currentDay}`;
 		setDragging(false);
 		endOverlay.classList.add('hidden');
 		if (endImage) {
@@ -1005,8 +1092,8 @@ updateSummary(initialStats);
 function startIntervals() {
 	if (tickInterval) clearInterval(tickInterval);
 	if (dayInterval) clearInterval(dayInterval);
-	tickInterval = setInterval(tick, 800);
-	dayInterval = setInterval(advanceDay, 10000);
+	tickInterval = setInterval(tick, 2000);
+	dayInterval = setInterval(advanceDay, 5000);
 }
 
 if (startButton) {
@@ -1052,7 +1139,7 @@ function exportLayoutPositions() {
 	}
 	console.log('tilePositions =', payload);
 	if (summary) {
-		summary.textContent = 'Koordinatlar panoya kopyalandi. Konsolda da tilePositions olarak yazdirildi.';
+		summary.textContent = 'Koordinatlar panoya kopyalandı. Konsolda da tilePositions olarak yazdırıldı.';
 	}
 }
 
@@ -1060,7 +1147,7 @@ function setLayoutMode(enabled) {
 	state.layoutMode = enabled;
 	document.body.classList.toggle('layout-mode', enabled);
 	if (toggleLayoutModeButton) {
-		toggleLayoutModeButton.textContent = `Layout Modu: ${enabled ? 'Acik' : 'Kapali'}`;
+		toggleLayoutModeButton.textContent = `Yerleşim Modu: ${enabled ? 'Açık' : 'Kapalı'}`;
 	}
 	refresh();
 }

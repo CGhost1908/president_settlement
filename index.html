@@ -6,6 +6,7 @@
 	<title>Settlement</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
 	<div class="ambient ambient-a"></div>
@@ -19,13 +20,13 @@
 						<div class="board-meta">
 							<div id="boardCount" class="count-pill">0 / 25 dolu</div>
 							<div id="dayCount" class="count-pill">Gün: 1</div>
-							<div class="layout-tools">
-								<button id="toggleLayoutMode" class="layout-button" type="button">Layout Modu: Kapali</button>
-								<button id="exportLayout" class="layout-button" type="button">Koordinatlari Kopyala</button>
-							</div>
+							<!-- <div class="layout-tools">
+									<button id="toggleLayoutMode" class="layout-button" type="button">Layout Modu: Kapalı</button>
+									<button id="exportLayout" class="layout-button" type="button">Koordinatları Kopyala</button>
+							</div> -->
 						</div>
 						<div id="boardStats" class="board-stats" aria-live="polite"></div>
-						<div id="board" class="board-grid" aria-label="Yerlesim alani"></div>
+						<div id="board" class="board-grid" aria-label="Yerleşim alanı"></div>
 						<div id="palette" class="palette-list board-palette" aria-label="Bina paleti"></div>
 					</div>
 				</div>
@@ -35,10 +36,10 @@
 
 	<div id="startOverlay" class="start-overlay" role="dialog" aria-modal="true" aria-labelledby="startTitle">
 		<div class="panel start-card">
-			<p class="eyebrow">Settlement</p>
-			<h2 id="startTitle">Hazir misin?</h2>
-			<p class="end-message">Sonsuz mod basliyor. Gun arttikca statlar daha hizli degisecek.</p>
-			<button id="startButton" class="restart-button" type="button">Oyuna Baslat</button>
+			<p class="eyebrow">Yerleşim</p>
+			<h2 id="startTitle">Hazır mısın?</h2>
+			<p class="end-message">Sonsuz mod başlıyor. Gün arttıkça istatistikler daha hızlı değişecek.</p>
+			<button id="startButton" class="restart-button" type="button">Oyuna Başlat</button>
 		</div>
 	</div>
 
@@ -47,9 +48,9 @@
 			<p id="endKicker" class="eyebrow"></p>
 			<h2 id="endTitle"></h2>
 			<p id="endMessage" class="end-message"></p>
-			<img id="endImage" class="end-image hidden" alt="end image">
+			<!-- <img id="endImage" class="end-image hidden" alt="son ekran görseli"> -->
 			<div id="endDetails" class="end-details"></div>
-			<button id="restartButton" class="restart-button" type="button">Yeniden baslat</button>
+			<button id="restartButton" class="restart-button" type="button">Yeniden Başlat</button>
 		</div>
 	</div>
 </body>
