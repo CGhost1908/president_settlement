@@ -1092,8 +1092,8 @@ updateSummary(initialStats);
 function startIntervals() {
 	if (tickInterval) clearInterval(tickInterval);
 	if (dayInterval) clearInterval(dayInterval);
-	tickInterval = setInterval(tick, 2000);
-	dayInterval = setInterval(advanceDay, 5000);
+	tickInterval = setInterval(tick, 5000);
+	dayInterval = setInterval(advanceDay, 15000);
 }
 
 if (startButton) {
